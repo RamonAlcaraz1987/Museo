@@ -115,6 +115,12 @@ formulario.addEventListener('submit',(evento)=>{
             propiedades.push('departmentId='+ qobjeto.departamento);
 
         }
+        else{
+
+            propiedades.push('departmentId='+ "");
+
+        }
+
 
         const qurl = url + 'search' + '?'+ propiedades.join('&');
        
