@@ -87,24 +87,17 @@ formulario.addEventListener('submit',(evento)=>{
 
         const propiedades = [];
 
-        if(qobjeto.busqueda)
-        {
+     
             propiedades.push('q='+ qobjeto.busqueda);
 
-        }
+        
 
-        else{
-
-            propiedades.push('q=""');  
-
-        }
-
-        if (qobjeto.ubicacion && qobjeto.ubicacion.value != Todos)
+        if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
         {
             propiedades.push('geoLocation=' + qobjeto.ubicacion);
 
         }
-        0
+        
         if(qobjeto.departamento && qobjeto.departamento != "0")
         {
             propiedades.push('departmentId='+ qobjeto.departamento);
