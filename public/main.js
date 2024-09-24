@@ -93,11 +93,6 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
 
-        else{
-
-            propiedades.push('q=""');  
-
-        }
 
         if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
         {
