@@ -99,7 +99,7 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
 
-        if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
+        if (qobjeto.ubicacion && qobjeto.ubicacion.value != Todos)
         {
             propiedades.push('geoLocation=' + qobjeto.ubicacion);
 
