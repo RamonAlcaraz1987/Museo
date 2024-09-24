@@ -195,27 +195,26 @@ formulario.addEventListener('submit',(evento)=>{
                 
 
                 const cultura = document.createElement('p');
-                if( objeto.culture && objeto.dynasty.trim()!=="" ){
-                
-                cultura.textContent = `Cultura: ${objeto.culture}`;
+                if( objeto.culture === "" ){
+                cultura.textContent = `Cultura: no especificada`;
                   
                 }
                 else 
 
                {
-               
-                cultura.textContent = `Cultura: no especificada`;
+               cultura.textContent = `Cultura: ${objeto.culture}`;
+                    
                     
                 }
                 
                 const dinastia = document.createElement('p');
-                if(objeto.dynasty === ""){
-                    dinastia.textContent = `Dinastia: no especificada`;
+                if(objeto.dynasty && objeto.dynasty.trim() !==""){
+                    dinastia.textContent = `Dinastia: ${objeto.dynasty}`;
+
                
                      }
                 else {
-                    dinastia.textContent = `Dinastia: ${objeto.dynasty}`;
-                
+                    dinastia.textContent = `Dinastia: no especificada`;
                 };
                 
 
