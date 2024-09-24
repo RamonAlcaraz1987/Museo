@@ -50,21 +50,30 @@ formulario.addEventListener('submit',(evento)=>{
     
     evento.preventDefault();
     pagActual = 1;
-    const qbuscar = busqueda.value.trim();
-    const qubicacion = ubicacion.value.trim();
-    const qdepartamentos = selects.value;
+    const qbuscar = busqueda.value;
+    const qubicacion = ubicacion.value;
+    const qdepartamentos = deptos.value;
 
-    const qobjeto= {
-        busqueda: qbuscar || null,
-        ubicacion: qubicacion || null,
-        departamento: qdepartamentos && qdepartamentos !== "0" ? qdepartamentos: null
+    const qobjeto= {};
 
+    qobjeto.busqueda = qbuscar;
 
+   
+    if(qubicacion){
+        qobjeto.ubicacion = qubicacion;
+    }else{
 
-    };
+        qobjeto.ubicacion = "";
+    }
 
-    
+    if(qdepartamentos)
+    {
+        qobjeto.departamento = qdepartamentos;
+     } else{
 
+        qobjeto.departamento = "";
+
+     }
 
     busquedaPaginacion(qobjeto);
 
@@ -80,26 +89,34 @@ formulario.addEventListener('submit',(evento)=>{
 
         if(qobjeto.busqueda)
         {
-            propiedades.push('q='+ encodeURIComponent(qobjeto.busqueda));
+            propiedades.push('q='+ qobjeto.busqueda);
 
         }
 
+        else{
+
+            propiedades.push('q=""');  
+
+        }
+
+        if (qobjeto.ubicacion && qobjeto.ubicacion !== "Todos")
+        {
+            propiedades.push('geoLocation=' + qobjeto.ubicacion);
+
+        }
        
-
-        if (qobjeto.ubicacion)
+        if(qobjeto.departamento && qobjeto.departamento != "0")
         {
-            propiedades.push('geoLocation=' + encodeURIComponent(qobjeto.ubicacion));
+            propiedades.push('departmentId='+ qobjeto.departamento);
 
         }
-        
-        if(qobjeto.departamento)
-        {
-            propiedades.push('departmentId='+ encodeURIComponent(qobjeto.departamento));
+        else{
+
+            propiedades.push('departmentId='+ "");
 
         }
-        
 
-        
+
         const qurl = url + 'search' + '?'+ propiedades.join('&');
        
         fetch (qurl)
@@ -284,4 +301,5 @@ formulario.addEventListener('submit',(evento)=>{
         
     }
 
+  
   
