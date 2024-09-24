@@ -2,7 +2,7 @@ const express = require("express");
 const translate  = require("node-google-translate-skidz");
  
 const app = express();
-const port = 3000;
+
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -35,8 +35,6 @@ app.post("/traducir", (req, res) => {
 });
 
 
-app.listen(port, () => {
 
-    console.log(`Server is running on port ${port}`);
-});
 
+module.exports = app;
