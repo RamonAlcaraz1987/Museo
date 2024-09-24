@@ -87,6 +87,7 @@ formulario.addEventListener('submit',(evento)=>{
 
         const propiedades = [];
 
+        
             propiedades.push('q='+ qobjeto.busqueda);
 
       
@@ -99,7 +100,7 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
        
-        if(qobjeto.departamento && qobjeto.departamento != "0")
+        if(qobjeto.departamento && qobjeto.departamento !== "0")
         {
             propiedades.push('departmentId='+ qobjeto.departamento);
 
@@ -112,7 +113,7 @@ formulario.addEventListener('submit',(evento)=>{
 
 
         const qurl = url + 'search' + '?'+ propiedades.join('&');
-       
+       console.log(qurl);
         fetch (qurl)
         .then((res) => res.json())
         .then((result)=>{
