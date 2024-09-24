@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Arte del Met</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <h1>Galería de Arte del Museo Metropolitano de NUEVA YORK</h1>
+  <form  method="post" id="formulario">
+    <label for="busqueda">Palabra Clave</label>
+    <input type="text" placeholder="campo obligatorio" id="busqueda">
+    <label for="ubicacion">Geolocalizacion</label>
+    <input type="text" id = "ubicacion">
+    <label for="dep">Departamentos</label>
+    <select id="dep"></select>
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div id="galeria"></div>
+  <div id = "footer"></div>
+
+ 
+</body>
+</html>
