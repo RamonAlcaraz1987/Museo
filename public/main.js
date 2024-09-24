@@ -58,13 +58,7 @@ formulario.addEventListener('submit',(evento)=>{
 
     qobjeto.busqueda = qbuscar;
 
-    if(qbuscar==='')
-    {
-
-        alert('El CAMPO PARABLA CLAVE DEBE ESTAR LLENO');
-        return;
-    }
-
+   
     if(qubicacion){
         qobjeto.ubicacion = qubicacion;
     }else{
