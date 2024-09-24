@@ -51,7 +51,7 @@ formulario.addEventListener('submit',(evento)=>{
     evento.preventDefault();
     pagActual = 1;
     const qbuscar = busqueda.value;
-    const qubicacion = ubicacion.value.trim();
+    const qubicacion = ubicacion.value;
     const qdepartamentos = deptos.value;
 
     const qobjeto= {};
@@ -195,15 +195,16 @@ formulario.addEventListener('submit',(evento)=>{
                 
 
                 const cultura = document.createElement('p');
-                if( objeto.culture === "" ){
-                cultura.textContent = `Cultura: no especificada`;
+                if( objeto.culture && objeto.dynasty.trim()!=="" ){
+                
+                cultura.textContent = `Cultura: ${objeto.culture}`;
                   
                 }
                 else 
 
                {
-               cultura.textContent = `Cultura: ${objeto.culture}`;
-                    
+               
+                cultura.textContent = `Cultura: no especificada`;
                     
                 }
                 
