@@ -93,12 +93,23 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
 
+        else{
+
+            propiedades.push('q=""');  
+
+        }
 
         if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
         {
             propiedades.push('geoLocation=' + qobjeto.ubicacion);
 
         }
+        else{
+            
+            propiedades.push('geoLocation=' + "");
+
+
+        };
         if(qobjeto.departamento && qobjeto.departamento != "0")
         {
             propiedades.push('departmentId='+ qobjeto.departamento);
