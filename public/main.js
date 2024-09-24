@@ -87,10 +87,13 @@ formulario.addEventListener('submit',(evento)=>{
 
         const propiedades = [];
 
-     
+        if(qobjeto.busqueda)
+        {
             propiedades.push('q='+ qobjeto.busqueda);
 
-        
+        }
+
+       
 
         if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
         {
