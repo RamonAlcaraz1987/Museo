@@ -89,21 +89,21 @@ formulario.addEventListener('submit',(evento)=>{
 
         if(qobjeto.busqueda)
         {
-            propiedades.push('q='+ qobjeto.busqueda);
+            propiedades.push('q='+ encodeURIComponent(qobjeto.busqueda));
 
         }
 
        
 
-        if (qobjeto.ubicacion && qobjeto.ubicacion.value != "Todos")
+        if (qobjeto.ubicacion && qobjeto.ubicacion.value !== "Todos")
         {
-            propiedades.push('geoLocation=' + qobjeto.ubicacion);
+            propiedades.push('geoLocation=' + encodeURIComponent(qobjeto.ubicacion));
 
         }
         
         if(qobjeto.departamento && qobjeto.departamento != "0")
         {
-            propiedades.push('departmentId='+ qobjeto.departamento);
+            propiedades.push('departmentId='+ encodeURIComponent(qobjeto.departamento));
 
         }
         
@@ -293,5 +293,4 @@ formulario.addEventListener('submit',(evento)=>{
         
     }
 
-  
   
