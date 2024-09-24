@@ -50,30 +50,21 @@ formulario.addEventListener('submit',(evento)=>{
     
     evento.preventDefault();
     pagActual = 1;
-    const qbuscar = busqueda.value;
-    const qubicacion = ubicacion.value;
-    const qdepartamentos = deptos.value;
+    const qbuscar = busqueda.value.trim();
+    const qubicacion = ubicacion.value.trim();
+    const qdepartamentos = selects.value;
 
-    const qobjeto= {};
+    const qobjeto= {
+        busqueda: qbuscar || null,
+        ubicacion: qubucacion || null,
+        departamento: qdepartamentos && qdepartamentos !== "0" ? qdepartamentos: null
 
-    qobjeto.busqueda = qbuscar;
 
-   
-    if(qubicacion){
-        qobjeto.ubicacion = qubicacion;
-    }else{
 
-        qobjeto.ubicacion = "";
-    }
+    };
 
-    if(qdepartamentos)
-    {
-        qobjeto.departamento = qdepartamentos;
-     } else{
+    
 
-        qobjeto.departamento = "";
-
-     }
 
     busquedaPaginacion(qobjeto);
 
@@ -95,13 +86,13 @@ formulario.addEventListener('submit',(evento)=>{
 
        
 
-        if (qobjeto.ubicacion && qobjeto.ubicacion.value !== "Todos")
+        if (qobjeto.ubicacion)
         {
             propiedades.push('geoLocation=' + encodeURIComponent(qobjeto.ubicacion));
 
         }
         
-        if(qobjeto.departamento && qobjeto.departamento != "0")
+        if(qobjeto.departamento)
         {
             propiedades.push('departmentId='+ encodeURIComponent(qobjeto.departamento));
 
