@@ -104,31 +104,16 @@ formulario.addEventListener('submit',(evento)=>{
             propiedades.push('geoLocation=' + qobjeto.ubicacion);
 
         }
-        else{
-            
-            propiedades.push('geoLocation=' + "");
-
-
-        };
+        0
         if(qobjeto.departamento && qobjeto.departamento != "0")
         {
             propiedades.push('departmentId='+ qobjeto.departamento);
 
         }
-        else{
+        
 
-            propiedades.push('departmentId='+ "");
-
-        }
-
-        if(propiedades.length!=0){
+        
         const qurl = url + 'search' + '?'+ propiedades.join('&');
-        }
-        else{
-
-            const qurl=url + 'search' + '?';
-
-        }
        
         fetch (qurl)
         .then((res) => res.json())
