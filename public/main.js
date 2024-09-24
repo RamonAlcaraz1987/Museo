@@ -56,7 +56,7 @@ formulario.addEventListener('submit',(evento)=>{
 
     const qobjeto= {
         busqueda: qbuscar || null,
-        ubicacion: qubucacion || null,
+        ubicacion: qubicacion || null,
         departamento: qdepartamentos && qdepartamentos !== "0" ? qdepartamentos: null
 
 
