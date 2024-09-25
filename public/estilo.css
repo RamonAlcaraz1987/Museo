@@ -29,7 +29,7 @@ body {
 
 }
 
-@media (max-widht: 600px)
+@media (max-width: 600px)
 {
   #formulario{
   flex-direction: column;
