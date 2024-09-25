@@ -26,6 +26,15 @@ body {
   margin: 20px auto;
   font-family: 'Roboto', sans-serif;
   gap: 10px;
+
+}
+
+@media (max-widht: 600px)
+{
+  #formulario{
+  flex-direction: column;
+  align-items: stretch;
+  }
 }
 
 #formulario label {
@@ -75,12 +84,37 @@ h1 {
 
 #galeria {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,minmax(0, 1fr));
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
+
+#atras{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #fb9323;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+
+ }
+
+ #atras:hover{
+
+  background-color: darkorange;
+
+
+ }
 
 .contenedorInd {
   border: 2px solid #adb5bd;
@@ -90,6 +124,8 @@ h1 {
   border-radius: 8px;
   background-color:#d7d7d7;
   transition: transform 0.2s, box-shadow 0.2s;
+  
+
 }
 
 .contenedorInd:hover {
@@ -102,6 +138,8 @@ h1 {
   height: auto;
   border-bottom: 2px solid #adb5bd;
   margin-bottom: 10px;
+
+
 }
 
 h4 {
@@ -133,9 +171,13 @@ p {
   color: #495057;
   font-size: 1em;
   transition: background-color 0.3s, color 0.3s;
+
+
 }
 
 #footer button:hover {
   background-color: #adb5bd;
   color: white;
+
+
 }
