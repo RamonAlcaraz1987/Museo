@@ -106,8 +106,12 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
        
+        if(propiedades[0]===""&& propiedades.length===1){
+            const qurl = url + 'search' + '?'+ 'q=""';
 
+        }else{
         const qurl = url + 'search' + '?'+ propiedades.join('&');
+        }
        console.log(qurl);
         fetch (qurl)
         .then((res) => res.json())
