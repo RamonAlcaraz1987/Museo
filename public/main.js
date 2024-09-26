@@ -200,7 +200,7 @@ formulario.addEventListener('submit',(evento)=>{
                 console.log("objeto culture:", objeto.culture);
                 if( objeto.culture === "" ){
                 cultura.textContent = `Cultura: no especificada`;
-                objeto.culture ="no one"  
+                objeto.culture ="unspecified"  
                 }
                 else 
 
@@ -220,7 +220,7 @@ formulario.addEventListener('submit',(evento)=>{
                      }
                 else {
                     dinastia.textContent = `Dinastia: no especificada`;
-                    objeto.dynasty ="no one"
+                    objeto.dynasty ="unspecified"
                 };
                 
 
