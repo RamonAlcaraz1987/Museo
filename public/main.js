@@ -12,7 +12,7 @@
 const url='https://collectionapi.metmuseum.org/public/collection/v1/';
 let pagActual = 1;
 let pagTotales = 0;
-
+let qurl;
 
 function llenarDep() {
     pagActual =1;
@@ -111,7 +111,7 @@ formulario.addEventListener('submit',(evento)=>{
             return;
 
         }else{
-        const qurl = url + 'search' + '?'+ propiedades.join('&');
+         qurl = url + 'search' + '?'+ propiedades.join('&');
         }
        console.log(qurl);
         fetch (qurl)
