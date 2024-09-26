@@ -210,6 +210,8 @@ formulario.addEventListener('submit',(evento)=>{
                 }
                 
                 const dinastia = document.createElement('p');
+
+                console.log("valor de dinastia:", objeto.dynasty);
                 if(objeto.dynasty && objeto.dynasty.trim() !==""){
                     dinastia.textContent = `Dinastia: ${objeto.dynasty}`;
 
