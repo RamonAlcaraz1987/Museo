@@ -234,11 +234,12 @@ formulario.addEventListener('submit',(evento)=>{
                     
                     if(dinastia.textContent !== `Dinastia: no especificada`){
                     console.log("valor antes de traducir: ", objeto.dynasty);
+                    console.log("Traducción de dinastía recibida:", traducciones[2]);
                     dinastia.textContent =`Dinastia: ${traducciones[2]};`;
-                   
+                    console.log("Valor después de la traducción:", dinastia.textContent);
                     }
                     
-                
+                    console.log("Valor final de dinastía en la tarjeta:", dinastia.textContent);
 
 
                 }).catch(error => {
