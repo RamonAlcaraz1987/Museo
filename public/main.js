@@ -225,6 +225,9 @@ formulario.addEventListener('submit',(evento)=>{
                 traducir(objeto.title, objeto.culture, objeto.dynasty)
                 .then(traducciones => {
 
+                    console.log("Traducciones:", traducciones);
+        
+
                     titulo.textContent = traducciones[0];
                    if(cultura.textContent !=`Cultura: no especificada` )
                     cultura.textContent = `Cultura: ${traducciones[1]};`
