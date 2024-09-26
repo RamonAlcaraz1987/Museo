@@ -230,20 +230,21 @@ formulario.addEventListener('submit',(evento)=>{
 
                     titulo.textContent = traducciones[0];
                    if(cultura.textContent !=`Cultura: no especificada` )
-                    cultura.textContent = `Cultura: ${traducciones[1]};`
+                    cultura.textContent = `Cultura: ${traducciones[1]};`;
                     
-                    if(dinastia.textContent != `Dinastia: no especificada`)
-                    dinastia.textContent =`Dinastia: ${traducciones[2]};`
+                    if(dinastia.textContent !== `Dinastia: no especificada`){
+                    console.log("valor antes de traducir: ", objeto.dynasty);
+                    dinastia.textContent =`Dinastia: ${traducciones[2]};`;
                    
-               
-                    
-                if(cultura.textContent==="")
-                    {
-                        console.log("entro");
                     }
+                    
+                
 
 
-                });
+                }).catch(error => {
+
+                    console.error("error en la traduccion", error);
+                })
 
                 if(objeto.additionalImages && objeto.additionalImages.length > 0){
                         
@@ -295,7 +296,7 @@ formulario.addEventListener('submit',(evento)=>{
             };
             
             const data = await resp.json();
-           
+           console.log("Datos traducidos recibidos:", data);
             return data.titulosTraducidos;
 
         
