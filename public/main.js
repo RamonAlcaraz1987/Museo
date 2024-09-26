@@ -170,14 +170,23 @@ formulario.addEventListener('submit',(evento)=>{
         galeria.innerHTML= '';
         totalID.forEach(id => {
             fetch(url + '/objects/'+ id)
-            .then((res)=> res.json())
+            .then((res)=>{  
+                
+                if (!res.ok){
+                console.log(`el objeto con ID ${id} esta roto`);
+                return null;
+
+            }
+                 res.json();
+                
+            })
             .then((objeto) => {
 
-                if (objeto.title === undefined){
+              if(!objeto || !objeto.title){
+                return;
 
-                    return;
 
-                }
+              }
                
                 const contenedorTarjeta = document.createElement('div')
                 contenedorTarjeta.setAttribute('class', 'contenedorInd')
