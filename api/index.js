@@ -20,9 +20,16 @@ app.post("/traducir", (req, res) => {
                 text: texto,
                 source: 'en',
                 target: 'es'
-            }, (result) => {
+            }, (result,error) => {
+                if(error){
+
+
+                    reject(error);
+                }
+                else{
                 
                 resolve(result.translation);
+                }
             });
         })
     ))
@@ -30,11 +37,9 @@ app.post("/traducir", (req, res) => {
         res.json({
             titulosTraducidos: traducciones
         });
-    })
+    });
     
 });
-
-
 
 
 module.exports = app;
