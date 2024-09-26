@@ -197,6 +197,7 @@ formulario.addEventListener('submit',(evento)=>{
                 
 
                 const cultura = document.createElement('p');
+                console.log("objeto culture:", objeto.culture);
                 if( objeto.culture === "" ){
                 cultura.textContent = `Cultura: no especificada`;
                   
@@ -232,8 +233,8 @@ formulario.addEventListener('submit',(evento)=>{
                    if(cultura.textContent !==`Cultura: no especificada` )
                     
                     {
-                     cultura.textContent = `Cultura: ${traducciones[1]};`;
-                     dinastia.textContent =`Dinastia: ${traducciones[2]};`;
+                         cultura.textContent = `Cultura: ${traducciones[1]};`;
+                         dinastia.textContent =`Dinastia: ${traducciones[2]};`;
                 
                 
                     }
