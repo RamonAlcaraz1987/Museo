@@ -211,7 +211,7 @@ formulario.addEventListener('submit',(evento)=>{
                 
                 const dinastia = document.createElement('p');
 
-                console.log("valor de dinastia:", objeto.dynasty);
+              
                 if(objeto.dynasty && objeto.dynasty.trim() !==""){
                     dinastia.textContent = `Dinastia: ${objeto.dynasty}`;
 
@@ -225,27 +225,33 @@ formulario.addEventListener('submit',(evento)=>{
                 traducir(objeto.title, objeto.culture, objeto.dynasty)
                 .then(traducciones => {
 
-                    console.log("Traducciones:", traducciones);
+                   
         
 
                     titulo.textContent = traducciones[0];
-                   if(cultura.textContent !=`Cultura: no especificada` )
-                    cultura.textContent = `Cultura: ${traducciones[1]};`;
+                   if(cultura.textContent !==`Cultura: no especificada` )
                     
-                    if(dinastia.textContent !== `Dinastia: no especificada`){
-                    console.log("valor antes de traducir: ", objeto.dynasty);
-                    console.log("Traducción de dinastía recibida:", traducciones[2]);
-                    dinastia.textContent =`Dinastia: ${traducciones[2]};`;
-                    console.log("Valor después de la traducción:", dinastia.textContent);
+                    {
+                     cultura.textContent = `Cultura: ${traducciones[1]};`;
+                     dinastia.textContent =`Dinastia: ${traducciones[2]};`;
+                
+                
                     }
                     
-                    console.log("Valor final de dinastía en la tarjeta:", dinastia.textContent);
+                    else(dinastia.textContent !== `Dinastia: no especificada`)
+                    {
+                    
+                        dinastia.textContent =`Dinastia: ${traducciones[1]};`;
+                    
+                    };
+                    
+                    
 
 
                 }).catch(error => {
 
                     console.error("error en la traduccion", error);
-                })
+                });
 
                 if(objeto.additionalImages && objeto.additionalImages.length > 0){
                         
