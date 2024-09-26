@@ -12,7 +12,7 @@
 const url='https://collectionapi.metmuseum.org/public/collection/v1/';
 let pagActual = 1;
 let pagTotales = 0;
-let qurl;
+
 
 function llenarDep() {
     pagActual =1;
@@ -103,14 +103,15 @@ formulario.addEventListener('submit',(evento)=>{
         if(qobjeto.departamento && qobjeto.departamento !== "0")
         {
             propiedades.push('departmentId='+ qobjeto.departamento);
-
+            
         }
        
         if(propiedades[0]==="q="&& propiedades.length===1){
-             qurl = url + 'search' + '?'+ 'q=""';
+            galeria.innerHTML ='<h1>Ingrese al menos un  criterio </h1>';
+            return;
 
         }else{
-         qurl = url + 'search' + '?'+ propiedades.join('&');
+        const qurl = url + 'search' + '?'+ propiedades.join('&');
         }
        console.log(qurl);
         fetch (qurl)
@@ -173,9 +174,9 @@ formulario.addEventListener('submit',(evento)=>{
             .then((res)=> res.json())
             .then((objeto) => {
 
-                if (!res.ok){
-                    console.log(`el objeto con ID ${id} esta roto`)
-                    return null;
+                if (objeto.title === undefined){
+
+                    return;
 
                 }
                
