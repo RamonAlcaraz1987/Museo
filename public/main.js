@@ -177,11 +177,11 @@ formulario.addEventListener('submit',(evento)=>{
                 return null;
 
             }
-                 res.json();
+                return res.json();
                 })
             .then((objeto) => {
 
-              
+              if(!objeto) return;
                
                 const contenedorTarjeta = document.createElement('div')
                 contenedorTarjeta.setAttribute('class', 'contenedorInd')
