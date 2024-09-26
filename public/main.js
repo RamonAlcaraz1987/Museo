@@ -168,7 +168,8 @@ formulario.addEventListener('submit',(evento)=>{
 
     function tarjetas(totalID){
         galeria.innerHTML= '';
-        totalID.forEach(id => {
+       
+        const promesas = totalID.map(id => {
             fetch(url + '/objects/'+ id)
             .then((res)=>{  
                 
@@ -179,7 +180,16 @@ formulario.addEventListener('submit',(evento)=>{
             }
                 return res.json();
                 })
-            .then((objeto) => {
+            
+            .catch((error)=> {
+                    console.error(`error al obeteer el objeto con ID ${id}: `, error);
+                    return null;
+
+
+            })
+            
+              Promise.all(promesas).then((objeto) => {
+                objetos.forEach(objeto =>{
 
               if(!objeto) return;
                
@@ -233,7 +243,7 @@ formulario.addEventListener('submit',(evento)=>{
                     if(dinastia.textContent != `Dinastia: no especificada`)
                     dinastia.textContent =`Dinastia: ${traducciones[2]};`
                    
-               
+                });
                     
                 if(cultura.textContent==="")
                     {
