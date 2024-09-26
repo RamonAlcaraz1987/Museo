@@ -106,7 +106,7 @@ formulario.addEventListener('submit',(evento)=>{
 
         }
        
-        if(propiedades[0]===""&& propiedades.length===1){
+        if(propiedades[0]==="q="&& propiedades.length===1){
              qurl = url + 'search' + '?'+ 'q=""';
 
         }else{
