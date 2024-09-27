@@ -175,7 +175,7 @@ formulario.addEventListener('submit',(evento)=>{
             .then((objeto) => {
 
                 if (objeto.title === undefined){
-                    console.log("error en titulo");
+                  
                     return;
                    
 
@@ -198,7 +198,7 @@ formulario.addEventListener('submit',(evento)=>{
                 
 
                 const cultura = document.createElement('p');
-                console.log("objeto culture:", objeto.culture);
+                
                 if( objeto.culture === "" ){
                 cultura.textContent = `Cultura: no especificada`;
                 objeto.culture ="unspecified"  
@@ -306,7 +306,7 @@ formulario.addEventListener('submit',(evento)=>{
             };
             
             const data = await resp.json();
-           console.log("Datos traducidos recibidos:", data);
+          
             return data.titulosTraducidos;
 
         
