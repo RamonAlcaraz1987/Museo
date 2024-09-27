@@ -199,7 +199,7 @@ formulario.addEventListener('submit',(evento)=>{
 
                 const cultura = document.createElement('p');
                 
-                if( objeto.culture && objeto.cuture.trim() !== "" ){
+                if( objeto.culture && objeto.culture.trim() !== "" ){
              
                 cultura.textContent = `Cultura: ${objeto.culture}`;
                 }
