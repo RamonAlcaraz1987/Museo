@@ -175,8 +175,9 @@ formulario.addEventListener('submit',(evento)=>{
             .then((objeto) => {
 
                 if (objeto.title === undefined){
-
+                    console.log("error en titulo");
                     return;
+                   
 
                 }
                
