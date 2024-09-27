@@ -199,14 +199,15 @@ formulario.addEventListener('submit',(evento)=>{
 
                 const cultura = document.createElement('p');
                 
-                if( objeto.culture === "" ){
-                cultura.textContent = `Cultura: no especificada`;
-                objeto.culture ="unspecified"  
+                if( objeto.culture && objeto.cuture.trim() !== "" ){
+             
+                cultura.textContent = `Cultura: ${objeto.culture}`;
                 }
                 else 
 
                {
-               cultura.textContent = `Cultura: ${objeto.culture}`;
+                cultura.textContent = `Cultura: no especificada`;
+                objeto.culture ="unspecified"  ;
                     
                     
                 }
@@ -221,7 +222,7 @@ formulario.addEventListener('submit',(evento)=>{
                      }
                 else {
                     dinastia.textContent = `Dinastia: no especificada`;
-                    objeto.dynasty ="unspecified"
+                    objeto.dynasty ="unspecified";
                 };
                 
 
